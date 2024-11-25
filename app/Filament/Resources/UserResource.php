@@ -17,7 +17,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Hash;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
-class UsersResource extends Resource
+class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
@@ -33,41 +33,36 @@ class UsersResource extends Resource
                     ->minValue(2)
                     ->maxValue(50)
                     ->label('Имя'),
-
                 TextInput::make('l_name')
                     ->string()
                     ->required()
                     ->minValue(2)
                     ->maxValue(50)
                     ->label('Фамилия'),
-
                 TextInput::make('m_name')
                     ->string()
                     ->nullable()
                     ->minValue(2)
                     ->maxValue(50)
                     ->label('Отчество'),
-
                 TextInput::make('password')
                     ->required()
                     ->password()
                     ->string()
-                    ->minValue(4)
+                    ->minValue(8)
+                    ->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/')
                     ->dehydrateStateUsing(fn($state) => Hash::make($state))
                     ->label('Пароль'),
-
-
                 TextInput::make('email')
                     ->required()
                     ->email()
                     ->label('Email'),
-
                 DatePicker::make('birthday')
                     ->required()
                     ->date()
-                    ->before(today())
+                    ->minDate(now()->subYears(125))
+                    ->maxDate(now())
                     ->label('Дата рождения'),
-
                 SpatieMediaLibraryFileUpload::make('image')
                     ->customHeaders(['CacheControl' => 'max-age=86400'])
                     ->label('Изображение'),
@@ -78,14 +73,26 @@ class UsersResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id')->label('ID'),
-                Tables\Columns\TextColumn::make('f_name')->label('Имя'),
-                Tables\Columns\TextColumn::make('l_name')->label('Фамилия'),
-                Tables\Columns\TextColumn::make('m_name')->label("Отчество"),
-                Tables\Columns\TextColumn::make('birthday')->label('Дата рождения'),
-                Tables\Columns\TextColumn::make('email')->label('Email'),
+                Tables\Columns\TextColumn::make('id')->label('ID')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('f_name')->label('Имя')
+                    ->toggleable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('l_name')->label('Фамилия')
+                    ->toggleable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('m_name')->label("Отчество")
+                    ->toggleable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('birthday')->label('Дата рождения')
+                    ->toggleable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('email')->label('Email')
+                    ->toggleable()
+                    ->searchable(),
                 Tables\Columns\ImageColumn::make('media')
                     ->label('Изображение')
+                    ->toggleable()
                     ->getStateUsing(fn($record) => $record->getFirstMediaUrl())
             ])
             ->filters([
