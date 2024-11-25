@@ -1,4 +1,3 @@
-
 @extends('appSection@user::main')
 @section('content')
     <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
@@ -32,7 +31,8 @@
 
         <div class="mb-3">
             <label for="date_birth" class="form-label">Дата рождения</label>
-            <input value="{{ old('birthday') }}" type="date" class="form-control" id="date_birth" name="birthday" required>
+            <input value="{{ old('birthday') }}" type="date" class="form-control" id="date_birth" name="birthday"
+                   required>
 
             @error('birthday')
             <p class="text-danger">{{ $message }}</p>
@@ -41,7 +41,8 @@
 
         <div class="mb-3">
             <label for="password" class="form-label">Пароль</label>
-            <input value="{{ old('password') }}" type="text" class="form-control" id="password" name="password" required>
+            <input value="{{ old('password') }}" type="text" class="form-control" id="password" name="password"
+                   required>
 
             @error('password')
             <p class="text-danger">{{ $message }}</p>
