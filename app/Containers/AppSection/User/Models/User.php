@@ -148,6 +148,7 @@ class User extends UserModel implements HasMedia, FilamentUser, HasName
     public function setEmail(?string $email): void
     {
         $this->email = $email;
+        //test
     }
 
     public function getPassword(): string
