@@ -4,6 +4,7 @@ namespace App\Containers\AppSection\User\Models;
 
 use App\Ship\Parents\Models\UserModel;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia;
@@ -59,13 +60,24 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Illuminate\Database\Eloquent\Builder|User withoutTrashed()
  * @mixin \Eloquent
  */
-class User extends UserModel implements HasMedia
+class User extends UserModel implements HasMedia, FilamentUser, HasName
 {
     use Notifiable;
     use SoftDeletes;
     use InteractsWithMedia;
 
     protected $table = 'users';
+
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return true;
+    }
+
+    public function getFilamentName(): string
+    {
+        return "{$this->f_name} {$this->l_name}";
+    }
+
 
     public $fillable = [
         'f_name',

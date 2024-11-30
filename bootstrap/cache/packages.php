@@ -8,6 +8,11 @@
   ),
   'apiato/core' => 
   array (
+    'aliases' => 
+    array (
+      'Fractal' => 'Spatie\\Fractal\\Facades\\Fractal',
+      'Hashids' => 'Vinkla\\Hashids\\Facades\\Hashids',
+    ),
     'providers' => 
     array (
       0 => 'Apiato\\Core\\Providers\\ApiatoServiceProvider',
@@ -15,11 +20,6 @@
       2 => 'Prettus\\Repository\\Providers\\RepositoryServiceProvider',
       3 => 'Spatie\\Fractal\\FractalServiceProvider',
       4 => 'Apiato\\Core\\Generator\\GeneratorsServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Hashids' => 'Vinkla\\Hashids\\Facades\\Hashids',
-      'Fractal' => 'Spatie\\Fractal\\Facades\\Fractal',
     ),
   ),
   'apiato/documentation-generator-container' => 
