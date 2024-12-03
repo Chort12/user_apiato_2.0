@@ -252,7 +252,7 @@ final class Versions
   'symfony/var-exporter' => 'v7.2.0@1a6a89f95a46af0f142874c9d650a6358d13070d',
   'theseer/tokenizer' => '1.2.3@737eda637ed5e28c3413cb1ebe8bb52cbf1ca7a2',
   'vimeo/psalm' => '5.26.1@d747f6500b38ac4f7dfc5edbcae6e4b637d7add0',
-  'apiato/apiato' => 'dev-main@516dbbfd16d9b162baca728b9472a49790b25a7b',
+  'apiato/apiato' => 'dev-main@2198d98686eb42b67b36fb7698b603ccf64f99b5',
 );
 
     private function __construct()

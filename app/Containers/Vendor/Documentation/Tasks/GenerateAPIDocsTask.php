@@ -29,7 +29,7 @@ class GenerateAPIDocsTask extends AbstractTask
 
         $process = new Process($command);
 
-        // execute the command
+        // execute the Commands
         $process->run();
 
         if (!$process->isSuccessful()) {

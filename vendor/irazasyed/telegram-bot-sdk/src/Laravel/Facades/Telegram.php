@@ -1,7 +1,7 @@
 <?php
 
 namespace Telegram\Bot\Laravel\Facades;
-
+//namespace vendor\irazasyed\telegram-bot-sdk\src\Laravel\Facades;
 use Illuminate\Support\Facades\Facade;
 use Telegram\Bot\BotsManager;
 

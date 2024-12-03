@@ -129,7 +129,7 @@ return [
     | Model locations to include
     |--------------------------------------------------------------------------
     |
-    | Define in which directories the ide-helper:models command should look
+    | Define in which directories the ide-helper:models Commands should look
     | for models.
     |
     | glob patterns are supported to easier reach models in sub-directories,

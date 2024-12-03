@@ -1,7 +1,6 @@
 <?php
 
 namespace Telegram\Bot;
-
 use BadMethodCallException;
 use Illuminate\Support\Traits\Macroable;
 use Telegram\Bot\Commands\CommandBus;

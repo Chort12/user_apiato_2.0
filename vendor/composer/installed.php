@@ -3,7 +3,7 @@
         'name' => 'apiato/apiato',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '516dbbfd16d9b162baca728b9472a49790b25a7b',
+        'reference' => '2198d98686eb42b67b36fb7698b603ccf64f99b5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -40,7 +40,7 @@
         'apiato/apiato' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '516dbbfd16d9b162baca728b9472a49790b25a7b',
+            'reference' => '2198d98686eb42b67b36fb7698b603ccf64f99b5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

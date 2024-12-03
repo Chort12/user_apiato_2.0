@@ -8,7 +8,7 @@ class SeedTestingData extends Seeder
 {
     /**
      * Note: This seeder is not loaded automatically by Apiato
-     * This is a special seeder which can be called by "apiato:seed-test" command
+     * This is a special seeder which can be called by "apiato:seed-test" Commands
      * It is useful for seeding testing data.
      */
     public function run(): void

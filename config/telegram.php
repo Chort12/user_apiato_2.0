@@ -32,7 +32,8 @@ return [
     */
     'bots' => [
         'mybot' => [
-            'token' => env('TELEGRAM_BOT_TOKEN', 'YOUR-BOT-TOKEN'),
+//            'token' => env('TELEGRAM_BOT_TOKEN', 'YOUR-BOT-TOKEN'),
+            'token' => '7444180446:AAFlZkdY11a3TeJhJbpvaXeFqk0t-4ID5SQ',
             'certificate_path' => env('TELEGRAM_CERTIFICATE_PATH', 'YOUR-CERTIFICATE-PATH'),
             'webhook_url' => env('TELEGRAM_WEBHOOK_URL', 'YOUR-BOT-WEBHOOK-URL'),
             /*
@@ -40,14 +41,18 @@ return [
              */
             'allowed_updates' => null,
             'commands' => [
-                \App\Containers\AppSection\phpbot\command\StartCommand::class
+                \App\Containers\AppSection\phpbot\Commands\StartCommand::class,
+                HelpCommand::class
                 //Acme\Project\Commands\MyTelegramBot\BotCommand::class
             ],
         ],
 
-        //        'mySecondBot' => [
-        //            'token' => '123456:abc',
-        //        ],
+//                'mybot' => [
+//                    'token' => '7444180446:AAFlZkdY11a3TeJhJbpvaXeFqk0t-4ID5SQ',
+//                    'commands' => [
+//                        HelpCommand::class
+//                    ]
+//                ],
     ],
 
     /*
@@ -106,7 +111,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Using Laravel's IoC container, we can easily type hint dependencies in
-    | our command's constructor and have them automatically resolved for us.
+    | our Commands's constructor and have them automatically resolved for us.
     |
     | Default: true
     | Possible Values: (Boolean) "true" OR "false"
@@ -119,19 +124,20 @@ return [
     | Register Telegram Global Commands [Optional]
     |--------------------------------------------------------------------------
     |
-    | If you'd like to use the SDK's built in command handler system,
+    | If you'd like to use the SDK's built in Commands handler system,
     | You can register all the global commands here.
     |
     | Global commands will apply to all the bots in system and are always active.
     |
-    | The command class should extend the \Telegram\Bot\Commands\Command class.
+    | The Commands class should extend the \Telegram\Bot\Commands\Command class.
     |
-    | Default: The SDK registers, a help command which when a user sends /help
+    | Default: The SDK registers, a help Commands which when a user sends /help
     | will respond with a list of available commands and description.
     |
     */
     'commands' => [
         HelpCommand::class,
+        \App\Containers\AppSection\phpbot\Commands\StartCommand::class
     ],
 
     /*
@@ -143,9 +149,9 @@ return [
     | be re-used across all your bots.
     |
     | You can create 4 types of groups:
-    | 1. Group using full path to command classes.
-    | 2. Group using shared commands: Provide the key name of the shared command
-    | and the system will automatically resolve to the appropriate command.
+    | 1. Group using full path to Commands classes.
+    | 2. Group using shared commands: Provide the key name of the shared Commands
+    | and the system will automatically resolve to the appropriate Commands.
     | 3. Group using other groups of commands: You can create a group which uses other
     | groups of commands to bundle them into one group.
     | 4. You can create a group with a combination of 1, 2 and 3 all together in one group.

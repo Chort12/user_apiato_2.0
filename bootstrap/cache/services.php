@@ -247,13 +247,13 @@
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'Illuminate\\Contracts\\Validation\\UncompromisedVerifier' => 'Illuminate\\Validation\\ValidationServiceProvider',
-    'command.ide-helper.generate' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
-    'command.ide-helper.models' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
+    'Commands.ide-helper.generate' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
+    'Commands.ide-helper.models' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
     'Telegram\\Bot\\BotsManager' => 'Telegram\\Bot\\Laravel\\TelegramServiceProvider',
     'Telegram\\Bot\\Api' => 'Telegram\\Bot\\Laravel\\TelegramServiceProvider',
     'telegram' => 'Telegram\\Bot\\Laravel\\TelegramServiceProvider',
     'telegram.bot' => 'Telegram\\Bot\\Laravel\\TelegramServiceProvider',
-    'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
+    'Commands.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
   ),
   'when' => 
   array (
