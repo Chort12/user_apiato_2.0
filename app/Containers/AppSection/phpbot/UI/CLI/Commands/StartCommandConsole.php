@@ -14,14 +14,11 @@ class StartCommandConsole extends ConsoleCommand
 
     public function handle(): void
     {
-        $chat_id = 6525271119;
-        try {
-            $this->line('Message send to ' . $chat_id);
-            $response = Telegram::bot('mybot')->sendMessage([
-                'chat_id' => $chat_id,
+        $chatId = 6525271119;
+            $this->line('Message send to ' . $chatId);
+            Telegram::bot('mybot')->sendMessage([
+                'chat_id' => $chatId,
                 'text' => 'Hey, there! Welcome to our bot!',
             ]);
-        } catch (Exception $e) {
-        };
     }
 }
