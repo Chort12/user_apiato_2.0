@@ -2,9 +2,12 @@
 
 namespace App\Containers\AppSection\phpbot\Commands;
 
+use App\Ship\Parents\Commands\ConsoleCommand;
+use http\Message;
 use Telegram\Bot\Api;
 use Telegram\Bot\Commands\Command;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use Telegram\Bot\Methods\Commands;
 
 class StartCommand extends Command
 {
@@ -13,15 +16,9 @@ class StartCommand extends Command
 
     public function handle(): void
     {
-        $this->replyWithMessage([
-            'chat_id'=>'6525271119',
+        $response = Telegram::bot('mybot')->sendMessage([
+            'chat_id' => 6525271119,
             'text' => 'Hey, there! Welcome to our bot!',
         ]);
-//        $telegram = Telegram::bot('mybot')->getMe();
-//
-//        $response = $telegram->sendMessage([
-//            'chat_id'=>'6525271119',
-//            'text'=>'Hi'
-//        ]);
     }
 }

@@ -42,7 +42,7 @@ return [
             'allowed_updates' => null,
             'commands' => [
                 \App\Containers\AppSection\phpbot\Commands\StartCommand::class,
-                HelpCommand::class
+//                HelpCommand::class,
                 //Acme\Project\Commands\MyTelegramBot\BotCommand::class
             ],
         ],

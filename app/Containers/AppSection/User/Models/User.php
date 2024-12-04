@@ -4,6 +4,7 @@ namespace App\Containers\AppSection\User\Models;
 
 use App\Ship\Parents\Models\UserModel;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasName;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;

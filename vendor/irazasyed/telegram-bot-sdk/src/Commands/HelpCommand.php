@@ -27,12 +27,14 @@ final class HelpCommand extends Command
      */
     public function handle(): void
     {
-        $commands = $this->telegram->getCommandBus()->getCommands();
 
-        $text = '';
-        foreach ($commands as $name => $handler) {
-            $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
-        }
+//        $commands = $this->telegram->getCommandBus()->getCommands();
+
+        dd($this);
+        $text = '2';
+//        foreach ($commands as $name => $handler) {
+//            $text .= sprintf('/%s - %s'.PHP_EOL, $name, $handler->getDescription());
+//        }
 
         $this->replyWithMessage(['text' => $text]);
     }
